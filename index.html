@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Facts</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="dog-info" class="hidden">
+        <img id="dog-image" alt="" />
+        <p id="dog-fact"></p>
+      </div>
+      <div id="controls">
+        <button id="fetch-btn">Fetch Dog Fact</button>
+        <button id="download-btn">Download Image</button>
+        <button id="like-btn" class="like-btn">❤️</button>
+        <span id="like-count">0</span>
+        <div id="comment-section" class="hidden">
+          <input type="text" id="comment-input" placeholder="Add a comment" />
+          <button id="comment-btn">Comment</button>
+          <ul id="comment-list"></ul>
+        </div>
+      </div>
+      <div id="dark-mode-section">
+        <button id="darkModeButton">Dark Mode (Hold Shift)</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

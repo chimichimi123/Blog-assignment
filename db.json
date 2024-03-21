@@ -1,0 +1,24 @@
+{
+  "dogBreeds": [
+    {
+      "name": "Bulldog",
+      "description": "Bulldogs often suffer from breathing problems due to their short snouts."
+    },
+    {
+      "name": "Pug",
+      "description": "Pugs are prone to various health issues, including breathing difficulties and eye problems."
+    },
+    {
+      "name": "German Shepherd",
+      "description": "German Shepherds may suffer from hip dysplasia and other genetic disorders."
+    },
+    {
+      "name": "Golden Retriever",
+      "description": "Golden Retrievers are susceptible to certain cancers and hip dysplasia."
+    },
+    {
+      "name": "Chihuahua",
+      "description": "Chihuahuas can suffer from dental problems and hypoglycemia."
+    }
+  ]
+}
