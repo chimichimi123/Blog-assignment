@@ -95,6 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-darkModeButton.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Alt") {
+    document.body.classList.toggle("dark-mode");
+  }
 });
