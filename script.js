@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const imageUrl = data[1].message;
         dogFact.textContent = fact;
         dogpicture.src = imageUrl;
+        dogpicture.title = imageUrl;
         showDogInfo();
       })
       .catch((error) => console.error("Error fetching dog data:", error));
