@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const commentList = document.getElementById("comment-list");
   const dogpicture = document.getElementById("dog-image");
   const pictureName = document.getElementById("pictureName");
-  const darkModeButton = document.getElementById("dark-Mode-Button");
 
   fetchButton.addEventListener("click", fetchDogFact);
   downloadButton.addEventListener("click", function (e) {
@@ -58,14 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         showDogInfo();
       })
       .catch((error) => console.error("Error fetching dog data:", error));
-  }
-
-  function downloadImage() {
-    const imageUrl = dogImage.src;
-    const downloadLink = document.createElement("a");
-    downloadLink.href = imageUrl;
-    downloadLink.download = "dog_image.jpg";
-    downloadLink.click();
   }
 
   function likeFact() {
