@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h1>Random Dog Facts</h1>
     <div id="app">
       <div id="dog-info" class="hidden">
-        <img id="dog-image" alt="" width="500" height="600" />
+        <img id="dog-image" alt="dog-image" width="500" height="600" />
         <p id="dog-fact"></p>
       </div>
       <div id="controls">
-        <button id="fetch-btn">Fetch Dog Fact</button>
-        <button id="download-btn">Download Image</button>
-        <button id="like-btn" class="like-btn">❤️</button>
+        <button id="fetch-button">Fetch Dog Fact</button>
+        <button id="download-button">Download Image</button>
+        <button id="like-button" class="like-button">❤️</button>
         <span id="like-count">0</span>
         <div id="comment-section" class="hidden">
           <input type="text" id="comment-input" placeholder="Add a comment" />
-          <button id="comment-btn">Comment</button>
+          <button id="comment-button">Comment</button>
           <ul id="comment-list"></ul>
         </div>
       </div>

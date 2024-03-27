@@ -1,21 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const fetchBtn = document.getElementById("fetch-btn");
+  const fetchButton = document.getElementById("fetch-button");
   const dogInfo = document.getElementById("dog-info");
   const dogImage = document.getElementById("dog-image");
   const dogFact = document.getElementById("dog-fact");
-  const downloadBtn = document.getElementById("download-btn");
-  const likeBtn = document.getElementById("like-btn");
+  const downloadButton = document.getElementById("download-button");
+  const likeButton = document.getElementById("like-button");
   const likeCount = document.getElementById("like-count");
   const commentSection = document.getElementById("comment-section");
   const commentInput = document.getElementById("comment-input");
   const commentList = document.getElementById("comment-list");
   const dogpicture = document.getElementById("dog-image");
   const pictureName = document.getElementById("pictureName");
-  const darkModeButton = document.getElementById("darkModeButton");
+  const darkModeButton = document.getElementById("dark-Mode-Button");
 
-  fetchBtn.addEventListener("click", fetchDogFact);
-  downloadBtn.addEventListener("click", downloadImage);
-  likeBtn.addEventListener("click", likeFact);
+  fetchButton.addEventListener("click", fetchDogFact);
+  downloadButton.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    fetch(dogImage.src)
+      .then((response) => response.blob())
+      .then((blob) => {
+        let url = window.URL.createObjectURL(blob);
+
+        let a = document.createElement("a");
+        a.href = url;
+        a.download = "dog-image.jpg";
+        a.click();
+
+        setTimeout(() => window.URL.revokeObjectURL(url), 100);
+      });
+
+    dogImage.addEventListener("mouseover", () => {
+      pictureName.textContent = dogImage.alt;
+    });
+
+    dogImage.addEventListener("mouseout", () => {
+      pictureName.textContent = "";
+    });
+  });
+  likeButton.addEventListener("click", likeFact);
   commentInput.addEventListener("keypress", handleCommentInput);
 
   function fetchDogFact() {
@@ -30,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const fact = data[0].facts[0];
         const imageUrl = data[1].message;
         dogFact.textContent = fact;
-        dogImage.src = imageUrl;
+        dogpicture.src = imageUrl;
         showDogInfo();
       })
       .catch((error) => console.error("Error fetching dog data:", error));
@@ -74,12 +97,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 darkModeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-});
-
-dogpicture.addEventListener("mouseover", () => {
-  pictureName.textContent = dogImage.alt;
-});
-
-dogpicture.addEventListener("mouseout", () => {
-  pictureName.textContent = "";
 });
